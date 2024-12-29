@@ -165,6 +165,7 @@ export const registerController = async (req, res) =>{
     }
 
     const hashedContraseña = existeUsuario.contraseña;
+    const { compare } = bcryptjs
     if (!await bcryptjs.compare(contraseña, hashedContraseña)) {
         return res.status(400).json({
             ok: false,
