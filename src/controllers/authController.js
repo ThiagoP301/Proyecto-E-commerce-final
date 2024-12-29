@@ -1,8 +1,8 @@
 import { verifyContraseña, verifyEmail, verifyNombre, verifyEmailUser, verifyNameUser } from "../../helpers/validaciones.js"
 import ENVIROMENT from "../config/enviroment.js"
 import User from "../models/userModels.js"
-import bcryptjs from "bcryptjs"
 import { PORT } from "../server.js"
+import bcryptjs from "bcryptjs"
 import jwt from "jsonwebtoken"
 import { emailTrasnportador } from "../../helpers/emailTransporter.js"
 
@@ -165,7 +165,6 @@ export const registerController = async (req, res) =>{
     }
 
     const hashedContraseña = existeUsuario.contraseña;
-    const { compare } = bcryptjs
     if (!await bcryptjs.compare(contraseña, hashedContraseña)) {
         return res.status(400).json({
             ok: false,
