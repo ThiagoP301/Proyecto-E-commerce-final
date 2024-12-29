@@ -1,7 +1,7 @@
 import { verifyContraseña, verifyEmail, verifyNombre, verifyEmailUser, verifyNameUser } from "../../helpers/validaciones.js"
 import ENVIROMENT from "../config/enviroment.js"
 import User from "../models/userModels.js"
-import bcrypt, { compare } from "bcrypt"
+import bcryptjs, { compare } from "bcryptjs"
 import { PORT } from "../server.js"
 import jwt from "jsonwebtoken"
 import { emailTrasnportador } from "../../helpers/emailTransporter.js"
@@ -59,7 +59,7 @@ export const registerController = async (req, res) =>{
         return
     }
 
-    const hashedContraseña= await bcrypt.hash(camposState.contraseña.value, 10)
+    const hashedContraseña= await bcryptjs.hash(camposState.contraseña.value, 10)
 
     const validationToken = jwt.sign({email : camposState.email.value}, ENVIROMENT.SECRET_KEY, {expiresIn : "1d"} )
 
