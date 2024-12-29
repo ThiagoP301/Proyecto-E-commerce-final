@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import { Product } from "../models/productModel.js";
 import ENVIROMENT from "../config/enviroment.js";
 
-const MONGO_URL = ENVIROMENT.URL_MONGODB + "/" + ENVIROMENT.URL_DATABASE
+const MONGO_URL = ENVIROMENT.URL_MONGODB + ENVIROMENT.URL_DATABASE
 
 
 mongoose.connect( MONGO_URL, {
