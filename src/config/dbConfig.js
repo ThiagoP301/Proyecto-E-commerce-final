@@ -2,9 +2,9 @@ import mongoDB from "mongoose"
 import User from "../models/userModels.js"
 import ENVIROMENT from "./enviroment.js"
 
+const MONGO_URL = ENVIROMENT.URL_MONGODB + "/" + ENVIROMENT.URL_DATABASE
 
-//.conect se utiliza para establecer la conexion con la DB
-mongoDB.connect("mongodb+srv://thiago301:canela13@cluster0.2am0d.mongodb.net/UTN-PROGRAMACION-FULLSTACK", {} )
+mongoDB.connect(MONGO_URL, {} )
     .then(
         () =>{
         console.log("Se establecio la conexion con MongoDB")

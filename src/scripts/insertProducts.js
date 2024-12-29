@@ -1,10 +1,12 @@
 import fs from "fs"
 import mongoose from "mongoose"
 import { Product } from "../models/productModel.js";
+import ENVIROMENT from "../config/enviroment.js";
+
+const MONGO_URL = ENVIROMENT.URL_MONGODB + "/" + ENVIROMENT.URL_DATABASE
 
 
-
-mongoose.connect("mongodb+srv://thiago301:canela13@cluster0.2am0d.mongodb.net/UTN-PROGRAMACION-FULLSTACK", {
+mongoose.connect( MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
