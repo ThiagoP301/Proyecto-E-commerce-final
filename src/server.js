@@ -5,6 +5,7 @@ import mongoDB from './config/dbConfig.js';
 import cors from "cors"
 import cartRoute from './routes/cartRoute.js';
 import productRouter from './routes/productsRoute.js';
+import { insertProducts } from './scripts/insertProducts.js';
 
 
 
@@ -23,5 +24,7 @@ app.use("/api/products", productRouter)
 app.listen(PORT, (req, res)=>{
     console.log(`El servidor se esta ejecutando en http://localhost:${PORT}`)
 })
+
+insertProducts()
 
 export default app

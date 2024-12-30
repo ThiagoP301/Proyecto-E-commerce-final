@@ -14,7 +14,7 @@ mongoose.connect( MONGO_URL, {
 const products = JSON.parse(fs.readFileSync('./src/data/Products.json', 'utf-8'));
 
 
-const insertProducts = async () => {
+export const insertProducts = async () => {
     try {
         await Product.insertMany(products);
         console.log('Productos agregados con éxito');
