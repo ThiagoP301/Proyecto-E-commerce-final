@@ -4,7 +4,7 @@ import User from "../models/userModels.js"
 import { PORT } from "../server.js"
 import jwt from "jsonwebtoken"
 import { emailTrasnportador } from "../../helpers/emailTransporter.js"
-import bcrypt from "bcrypt"
+import bcryptjs from "bcryptjs";
 
 
 
@@ -59,7 +59,7 @@ export const registerController = async (req, res) =>{
         return
     }
 
-    const hashedContraseña= await bcrypt.hash(camposState.contraseña.value, 10)
+    const hashedContraseña= await bcryptjs.hash(camposState.contraseña.value, 10)
 
     const validationToken = jwt.sign({email : camposState.email.value}, ENVIROMENT.SECRET_KEY, {expiresIn : "1d"} )
 
@@ -165,7 +165,7 @@ export const registerController = async (req, res) =>{
     }
 
     const hashedContraseña = existeUsuario.contraseña;
-    if (!await bcrypt.compare(contraseña, hashedContraseña)) {
+    if (!await bcryptjs.compare(contraseña, hashedContraseña)) {
         return res.status(400).json({
             ok: false,
             status: 400,
