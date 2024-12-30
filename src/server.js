@@ -22,3 +22,5 @@ app.use("/api/products", productRouter)
 app.listen(PORT, (req, res)=>{
     console.log(`El servidor se esta ejecutando en http://localhost:${PORT}`)
 })
+
+export default app
