@@ -12,7 +12,7 @@ mongoose.connect( MONGO_URL, {
     useUnifiedTopology: true,
 });
 
-const productsPath = path.resolve('src/data/Products.json');
+const productsPath = path.resolve('./src/data/Products.json');
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
  const insertProducts = async () => {
