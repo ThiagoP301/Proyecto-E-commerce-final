@@ -11,7 +11,7 @@ mongoose.connect( MONGO_URL, {
     useUnifiedTopology: true,
 });
 
-const products = JSON.parse(fs.readFileSync('./src/data/Products.json', 'utf-8'));
+const products = JSON.parse(fs.readFileSync('src/data/Products.json', 'utf-8'));
 
  const insertProducts = async () => {
     try {
