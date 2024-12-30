@@ -4,11 +4,15 @@ import authRouter from "./routes/authRoute.js";
 import cors from "cors"
 import cartRoute from './routes/cartRoute.js';
 import productRouter from './routes/productsRoute.js';
+import mongoDB from './config/dbConfig.js';
+import { customCorsMiddleware } from './middlewares/cors.middlewares.js';
 
 
 
 const app = express()
 export const PORT =  process.env.PORT || 3001
+
+app.use(customCorsMiddleware)
 
 app.use(cors())
 app.use(express.json())
