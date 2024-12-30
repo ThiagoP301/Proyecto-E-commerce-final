@@ -23,3 +23,5 @@ const products = JSON.parse(fs.readFileSync('./src/data/Products.json', 'utf-8')
         mongoose.connection.close(); 
     }
 };
+
+insertProducts()
