@@ -1,6 +1,7 @@
 import express from 'express';
 import statusRouter from  "./routes/statusRoute.js";
 import authRouter from "./routes/authRoute.js"; 
+import mongoDB from './config/dbConfig.js'; 
 import cors from "cors"
 import cartRoute from './routes/cartRoute.js';
 import productRouter from './routes/productsRoute.js';
