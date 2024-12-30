@@ -5,7 +5,7 @@ import mongoDB from './config/dbConfig.js';
 import cors from "cors"
 import cartRoute from './routes/cartRoute.js';
 import productRouter from './routes/productsRoute.js';
-import { insertProducts } from './scripts/insertProducts.js';
+import insertProducts from './scripts/insertProducts.js';
 
 
 
