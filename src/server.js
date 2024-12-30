@@ -25,6 +25,4 @@ app.listen(PORT, (req, res)=>{
     console.log(`El servidor se esta ejecutando en http://localhost:${PORT}`)
 })
 
-insertProducts()
-
 export default app
