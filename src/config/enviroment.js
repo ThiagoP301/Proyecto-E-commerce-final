@@ -9,7 +9,7 @@ const ENVIROMENT= {
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || "",
     EMAIL_USER: process.env.EMAIL_USER || "",
     SECRET_KEY : process.env.SECRET_KEY,
-    MONGO_URI : process.env.MONGO_URI
+    MONGO_URL : process.env.MONGO_URL
 }
 
 

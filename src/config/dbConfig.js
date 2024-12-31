@@ -2,9 +2,9 @@ import mongoDB from "mongoose"
 import User from "../models/userModels.js"
 import ENVIROMENT from "./enviroment.js"
 
-const MONGO_URI = ENVIROMENT.MONGO_URI
+const MONGO_URL = ENVIROMENT.MONGO_URL
 
-mongoDB.connect(MONGO_URI, {} )
+mongoDB.connect(MONGO_URL, {} )
     .then(
         () =>{
         console.log("Se establecio la conexion con MongoDB")

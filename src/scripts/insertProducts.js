@@ -4,10 +4,10 @@ import { Product } from "../models/productModel.js";
 import ENVIROMENT from "../config/enviroment.js";
 import path from "path";
 
-const MONGO_URI = ENVIROMENT.MONGO_URI
+const MONGO_URL = ENVIROMENT.MONGO_URL
 
 
-mongoose.connect( MONGO_URI, {
+mongoose.connect( MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
