@@ -106,7 +106,7 @@ export const registerController = async (req, res) =>{
 
         userVerify.save()//lo guardo para que se actualice el emailVerified en la base de datos
         console.log(userVerify)
-        res.redirect("http://localhost:5173/login")
+        res.redirect("https://proyecto-e-commerce-final.vercel.app/login")
 
     }
 
